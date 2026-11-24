@@ -1,86 +1,727 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shreedas Maral | Data Analyst Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shreedas Maral - Junior Controller, Business Intelligence and Data Analytics Professional based in Nürnberg, Germany.">
+<meta name="theme-color" content="#0b1f3a">
+<title>Shreedas Maral | Controller & Business Intelligence</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+  --navy:#0b1f3a;
+  --navy2:#132e50;
+  --gold:#d4af37;
+  --white:#fff;
+  --light:#f4f6f9;
+  --text:#263447;
+  --muted:#68778b;
+  --border:#e5eaf0;
+  --shadow:0 12px 35px rgba(11,31,58,.08);
+}
+
+* {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+
+body {
+  font-family:'DM Sans',sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.7;
+}
+
+h1,h2,h3,h4 {font-family:'Manrope',sans-serif;line-height:1.25;}
+a {text-decoration:none;color:inherit;}
+.container {width:min(1120px,90%);margin:auto;}
+section {padding:90px 0;scroll-margin-top:75px;}
+
+.section-heading {text-align:center;margin-bottom:48px;}
+.section-heading span {
+  color:#a27e16;text-transform:uppercase;
+  letter-spacing:2px;font-size:12px;font-weight:700;
+}
+.section-heading h2 {
+  color:var(--navy);font-size:clamp(28px,4vw,38px);margin:10px 0;
+}
+.section-heading p {color:var(--muted);max-width:650px;margin:auto;}
+
+.btn {
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:9px;padding:13px 22px;border-radius:7px;
+  font-weight:700;transition:.25s;border:1px solid transparent;
+}
+.btn-gold {background:var(--gold);color:var(--navy);}
+.btn-gold:hover {background:#e5c65b;transform:translateY(-2px);}
+.btn-outline {border-color:rgba(255,255,255,.6);color:white;}
+.btn-outline:hover {background:white;color:var(--navy);}
+
+nav {
+  position:sticky;top:0;z-index:1000;background:white;
+  box-shadow:0 2px 15px rgba(0,0,0,.05);
+}
+.nav-inner {height:72px;display:flex;align-items:center;justify-content:space-between;}
+.logo {font:800 23px 'Manrope';color:var(--navy);}
+.logo span {color:var(--gold);}
+.nav-links {display:flex;gap:23px;align-items:center;}
+.nav-links a {font-size:13px;font-weight:600;color:var(--navy);}
+.nav-links a:hover {color:#b18a1d;}
+.menu-btn {display:none;background:none;border:0;font-size:23px;color:var(--navy);}
+
+.hero {
+  background:linear-gradient(120deg,#091b32,#153657);
+  color:white;padding:95px 0;position:relative;overflow:hidden;
+}
+.hero:before {
+  content:"";position:absolute;width:450px;height:450px;
+  border:1px solid rgba(212,175,55,.18);border-radius:50%;
+  right:-120px;top:-170px;
+}
+.hero-grid {
+  display:grid;grid-template-columns:1.5fr .8fr;
+  gap:55px;align-items:center;position:relative;
+}
+.hero-label {
+  color:var(--gold);font-size:13px;letter-spacing:2px;
+  text-transform:uppercase;font-weight:700;
+}
+.hero h1 {font-size:clamp(40px,6vw,65px);margin:16px 0;}
+.hero h1 span {color:var(--gold);}
+.hero h3 {font-size:20px;color:#d8e1ec;font-weight:500;}
+.hero p {color:#c3d0df;max-width:650px;margin:20px 0 28px;}
+.hero-actions {display:flex;gap:13px;flex-wrap:wrap;}
+.hero-meta {display:flex;gap:25px;flex-wrap:wrap;margin-top:35px;color:#d4dce6;font-size:13px;}
+.hero-meta i {color:var(--gold);margin-right:7px;}
+
+.profile-frame {
+  width:min(310px,100%);aspect-ratio:1;margin:auto;
+  border:5px solid var(--gold);border-radius:50%;
+  overflow:hidden;background:#e9edf2;
+  box-shadow:0 0 0 12px rgba(212,175,55,.12);
+}
+.profile-frame img {width:100%;height:100%;object-fit:cover;}
+.profile-note {text-align:center;color:#d4dce6;font-size:13px;margin-top:24px;}
+
+.about-grid {display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;}
+.about-card {background:var(--light);padding:30px;border-radius:14px;border-left:4px solid var(--gold);}
+.about-card h3 {color:var(--navy);margin-bottom:12px;}
+.about-card p {color:var(--muted);}
+.about-facts {display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+.fact {background:white;padding:18px;border:1px solid var(--border);border-radius:9px;}
+.fact strong {display:block;color:var(--navy);font-size:15px;}
+.fact small {color:var(--muted);}
+
+.timeline {max-width:850px;margin:auto;position:relative;}
+.timeline:before {
+  content:"";position:absolute;left:9px;top:8px;bottom:8px;
+  width:2px;background:#e6d59e;
+}
+.timeline-item {position:relative;padding:0 0 34px 42px;}
+.timeline-item:before {
+  content:"";position:absolute;left:2px;top:6px;
+  width:16px;height:16px;background:var(--gold);
+  border:3px solid white;box-shadow:0 0 0 2px var(--gold);border-radius:50%;
+}
+.timeline-card {
+  background:white;border:1px solid var(--border);
+  border-radius:12px;padding:24px;box-shadow:var(--shadow);
+}
+.timeline-card h3 {color:var(--navy);font-size:19px;}
+.timeline-card .date {color:#a27e16;font-weight:700;font-size:13px;margin:6px 0;}
+.timeline-card .location {color:var(--muted);font-size:13px;}
+.timeline-card ul {padding-left:20px;margin-top:12px;color:var(--muted);}
+.timeline-card li {margin:5px 0;}
+
+.skills-grid,.services-grid,.projects-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.skill-card,.service-card,.project-card {
+  background:white;border:1px solid var(--border);
+  padding:25px;border-radius:12px;transition:.25s;
+}
+.skill-card:hover,.service-card:hover,.project-card:hover {
+  transform:translateY(-5px);box-shadow:var(--shadow);
+  border-color:#d8c27e;
+}
+.skill-card h3,.service-card h3,.project-card h3 {
+  color:var(--navy);font-size:17px;margin-bottom:15px;
+}
+.skill-card i,.service-icon {color:#b28a20;font-size:23px;margin-bottom:15px;}
+.tags {display:flex;flex-wrap:wrap;gap:8px;}
+.tag {
+  background:#eef2f7;color:var(--navy);font-size:12px;
+  padding:6px 10px;border-radius:5px;font-weight:600;
+}
+.service-card p,.project-card p {color:var(--muted);font-size:14px;}
+.service-card {text-align:center;}
+.service-icon {font-size:28px;}
+
+.projects-grid {grid-template-columns:repeat(2,1fr);}
+.project-card {position:relative;overflow:hidden;}
+.project-number {color:#b18a1d;font-weight:800;font-size:13px;letter-spacing:2px;}
+.project-card h3 {margin:12px 0;}
+.project-card .tags {margin-top:18px;}
+
+.languages {display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:650px;margin:auto;}
+.language-card {padding:24px;border-radius:12px;background:var(--light);text-align:center;}
+.language-card h3 {color:var(--navy);margin-bottom:5px;}
+.language-card p {color:var(--muted);}
+
+.interests {
+  background:var(--navy);color:white;text-align:center;
+}
+.interests h2 {font-size:30px;margin-bottom:14px;}
+.interests p {color:#d0d9e4;}
+.interest-tags {display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:25px;}
+.interest-tags span {border:1px solid rgba(212,175,55,.6);padding:9px 18px;border-radius:30px;color:#f1d77e;}
+
+.contact-grid {display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;}
+.contact-info {background:var(--navy);color:white;padding:30px;border-radius:14px;}
+.contact-info h3 {margin-bottom:20px;}
+.contact-item {display:flex;gap:14px;margin:22px 0;align-items:flex-start;}
+.contact-item i {color:var(--gold);margin-top:5px;}
+.contact-item small {display:block;color:#c2cedc;}
+.contact-form {padding:28px;border:1px solid var(--border);border-radius:14px;}
+.contact-form h3 {color:var(--navy);margin-bottom:20px;}
+.form-row {display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.contact-form label {font-size:13px;font-weight:700;color:var(--navy);}
+.contact-form input,.contact-form textarea {
+  width:100%;padding:12px;border:1px solid var(--border);
+  border-radius:7px;margin:6px 0 16px;font:inherit;font-size:14px;
+}
+.contact-form textarea {height:130px;resize:vertical;}
+.contact-form input:focus,.contact-form textarea:focus {
+  outline:2px solid #e7d18b;border-color:var(--gold);
+}
+.contact-form button {cursor:pointer;}
+.contact-form .hint {font-size:12px;color:var(--muted);margin-top:12px;}
+
+footer {background:#07172a;color:#c1ccd9;padding:28px 0;text-align:center;font-size:13px;}
+footer strong {color:var(--gold);}
+footer a {color:white;}
+.socials {display:flex;justify-content:center;gap:20px;margin:15px 0;}
+.socials a {font-size:20px;color:var(--gold);}
+
+@media(max-width:850px) {
+  .nav-links {display:none;position:absolute;top:72px;left:0;width:100%;background:white;padding:20px;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow);}
+  .nav-links.open {display:flex;}
+  .menu-btn {display:block;}
+  .hero-grid,.about-grid,.contact-grid {grid-template-columns:1fr;}
+  .hero-content {text-align:center;}
+  .hero p {margin-left:auto;margin-right:auto;}
+  .hero-actions,.hero-meta {justify-content:center;}
+  .profile-frame {width:240px;}
+  .skills-grid,.services-grid {grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:550px) {
+  section {padding:65px 0;}
+  .skills-grid,.services-grid,.projects-grid,.languages,.form-row {grid-template-columns:1fr;}
+  .hero {padding:70px 0;}
+  .hero h1 {font-size:40px;}
+  .about-facts {grid-template-columns:1fr 1fr;}
+}
+</style>
 </head>
 
 <body>
 
-    <h1>Shreedas Maral</h1>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">SM<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
 
-    <h2>Data Analyst Portfolio</h2>
-
-    <p>
-        Welcome to my portfolio! I am an aspiring Data Analyst with a passion for
-        turning data into meaningful insights. I enjoy working with SQL, Python,
-        Power BI, Excel, and data visualization to solve business problems.
-    </p>
-
-    <hr>
-
-    <h2>Skills</h2>
-
-    <ul>
-        <li>SQL</li>
-        <li>Python</li>
-        <li>Power BI</li>
-        <li>Microsoft Excel</li>
-        <li>Pandas</li>
-        <li>NumPy</li>
-        <li>Data Visualization</li>
-    </ul>
-
-    <hr>
-
-    <h2>Projects</h2>
-
-    <h3>Sales Dashboard</h3>
-    <p>
-        Interactive Power BI dashboard for analyzing sales performance,
-        profit, and regional trends.
-    </p>
-
-    <h3>HR Analytics Dashboard</h3>
-    <p>
-        Dashboard to analyze employee attrition, workforce demographics,
-        and HR metrics.
-    </p>
-
-    <h3>Project Managemnt Dashboard</h3>
-    <p>
-        Exploratory Data Analysis using Python and Pandas to uncover
-        trends in Automobile Project.
-    </p>
-
-    <hr>
-
-    <h2>Resume</h2>
-
-    <p>
-        <a href="Shreedas_Maral_Resume.pdf" target="_blank">
-            📄 View My Resume
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-label">WELCOME TO MY PROFESSIONAL PORTFOLIO</div>
+      <h1>Hi, I'm <span>Shreedas Maral</span></h1>
+      <h3>Junior Controller | Business Intelligence | Data Analytics</h3>
+      <p>
+        I am an analytical Business and Operations professional with
+        experience in financial and operational controlling, KPI reporting,
+        Power BI dashboards, cost analysis and process optimization.
+        I turn complex business data into meaningful insights that support
+        informed decisions.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="Shreedas_Maral_Resume.pdf" download>
+          <i class="fa-solid fa-download"></i> Download CV
         </a>
-    </p>
-
-    <hr>
-
-    <h2>Contact</h2>
-
-    <p>
-        📧 Email:
-        <a href="mailto:shreemaral35@gmail.com">
-            shreemaral35@gmail.com
+        <a class="btn btn-outline" href="#contact">
+          <i class="fa-regular fa-envelope"></i> Contact Me
         </a>
-    </p>
+      </div>
+      <div class="hero-meta">
+        <span><i class="fa-solid fa-location-dot"></i>Nürnberg, Germany</span>
+        <span><i class="fa-solid fa-briefcase"></i>Open to Full-time Opportunities</span>
+      </div>
+    </div>
+    <div>
+      <div class="profile-frame">
+        <img src="assets/profile.jpg" alt="Professional portrait of Shreedas Maral"
+             onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'height:100%;display:grid;place-items:center;color:#0b1f3a;font-size:70px;font-weight:800\'>SM</div>';">
+      </div>
+      <p class="profile-note">Financial Controlling • Business Analytics • Operational Excellence</p>
+    </div>
+  </div>
+</section>
 
-    <p>
-        💻 GitHub:
-        <a href="https://github.com/Shreedas07" target="_blank">
-            https://github.com/Shreedas07
-        </a>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-heading">
+      <span>Get to know me</span>
+      <h2>About Me</h2>
+      <p>Combining analytical thinking, technical knowledge and business understanding.</p>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h3 style="color:var(--navy);font-size:25px;margin-bottom:15px;">
+          Turning Data Into Business Insights
+        </h3>
+        <p style="color:var(--muted);">
+          I am a Junior Controller with a background in business analytics,
+          production engineering and operational excellence. My professional
+          experience includes KPI and performance analysis, cost controlling,
+          reporting automation, forecasting support and cross-functional
+          collaboration.
+        </p>
+        <br>
+        <p style="color:var(--muted);">
+          I enjoy working with data, identifying opportunities for improvement
+          and translating complex information into transparent reports that
+          support business decisions. I am currently seeking a full-time
+          opportunity where I can contribute my analytical and technical skills.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>My Professional Focus</h3>
+        <p>Financial controlling, business intelligence, reporting,
+        data integration and continuous process improvement.</p>
+        <div class="about-facts">
+          <div class="fact"><strong>Finance</strong><small>Controlling & Analysis</small></div>
+          <div class="fact"><strong>Analytics</strong><small>BI & Reporting</small></div>
+          <div class="fact"><strong>Technology</strong><small>Power BI & SAP</small></div>
+          <div class="fact"><strong>Operations</strong><small>Process Excellence</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="background:var(--light);">
+  <div class="container">
+    <div class="section-heading">
+      <span>Academic journey</span>
+      <h2>Education</h2>
+      <p>My educational foundation in operational excellence, engineering and business analytics.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <h3>MBA – Operational Excellence</h3>
+          <div class="date">October 2022 – October 2025</div>
+          <div class="location">Hochschule Hof University of Applied Sciences, Germany</div>
+          <ul>
+            <li>Strategic & Financial Management</li>
+            <li>Business Analytics</li>
+            <li>Supply Chain Management</li>
+            <li>Project Management & Process Improvement</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <h3>Bachelor in Production Engineering</h3>
+          <div class="date">August 2017 – October 2020</div>
+          <div class="location">Mumbai University, India</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <h3>Diploma in Mechanical Engineering</h3>
+          <div class="date">August 2012 – August 2017</div>
+          <div class="location">Mumbai University, India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-heading">
+      <span>Career journey</span>
+      <h2>Professional Experience</h2>
+      <p>Practical experience across controlling, business intelligence, project management and operations.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <h3>Data Analyst & Controller</h3>
+          <div class="date">October 2024 – March 2026</div>
+          <div class="location">Glen Dimplex Deutschland GmbH | Kulmbach, Germany</div>
+          <ul>
+            <li>Developed Power BI dashboards for revenue, inventory, production and operational KPIs.</li>
+            <li>Analysed Operating Profit, Gross Profit, Inventory-to-Sales Ratio and Book-to-Bill.</li>
+            <li>Integrated SAP, SQL, Excel and SharePoint data into centralized reporting solutions.</li>
+            <li>Supported forecasting, planning and plan-versus-actual variance analysis.</li>
+            <li>Standardized KPI definitions and reporting processes across international business units.</li>
+            <li>Automated reporting with Power Query, Power BI and Power Automate.</li>
+            <li>Supported ESG reporting covering electricity, fuel and CO₂ metrics.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <h3>PMO Controller</h3>
+          <div class="date">January 2024 – August 2024</div>
+          <div class="location">Continental ADAS GmbH | Lindau, Germany</div>
+          <ul>
+            <li>Developed and maintained Power BI dashboards for project controlling and KPI reporting.</li>
+            <li>Analysed project, production and cost data to evaluate efficiency and performance.</li>
+            <li>Monitored Prototype Costs, Unwanted Costs and Engineering Efficiency.</li>
+            <li>Prepared project status reports and KPI evaluations for management reviews.</li>
+            <li>Standardized reporting structures across Finance, Engineering, HR and Project Management.</li>
+            <li>Supported process improvement and data-driven decision-making.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <h3>Project Manager</h3>
+          <div class="date">April 2020 – September 2022</div>
+          <div class="location">KPCE India | Mumbai, India</div>
+          <ul>
+            <li>Coordinated production and engineering projects from requirements through implementation.</li>
+            <li>Analysed production, project costs and operational data.</li>
+            <li>Created KPI evaluations for production efficiency and equipment utilization.</li>
+            <li>Supported cost breakdowns and project calculations.</li>
+            <li>Coordinated Engineering, Procurement, Production and Quality teams.</li>
+            <li>Supported root-cause analysis, continuous improvement and production planning.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <h3>Internship</h3>
+          <div class="date">November 2019 – March 2020</div>
+          <div class="location">Mumbai, India</div>
+          <ul>
+            <li>Supported KPI reporting, performance tracking and project documentation.</li>
+            <li>Performed data validation and prepared structured reports.</li>
+            <li>Supported technical project and documentation activities.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:var(--light);">
+  <div class="container">
+    <div class="section-heading">
+      <span>What I work with</span>
+      <h2>Skills & Expertise</h2>
+      <p>A combination of financial knowledge, analytical capabilities and technical tools.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Controlling & Business Analysis</h3>
+        <div class="tags">
+          <span class="tag">Financial Controlling</span>
+          <span class="tag">KPI Analysis</span>
+          <span class="tag">Forecasting Support</span>
+          <span class="tag">Variance Analysis</span>
+          <span class="tag">Cost Analysis</span>
+          <span class="tag">Management Reporting</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-chart-pie"></i>
+        <h3>Business Intelligence</h3>
+        <div class="tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">Dashboard Development</span>
+          <span class="tag">Data Modelling</span>
+          <span class="tag">Data Validation</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-database"></i>
+        <h3>ERP, Databases & Tools</h3>
+        <div class="tags">
+          <span class="tag">SAP S/4HANA</span>
+          <span class="tag">SAP Analytics Cloud</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Microsoft Excel</span>
+          <span class="tag">Power Automate</span>
+          <span class="tag">SharePoint</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-gears"></i>
+        <h3>Operations & Improvement</h3>
+        <div class="tags">
+          <span class="tag">Supply Chain Analysis</span>
+          <span class="tag">Inventory Monitoring</span>
+          <span class="tag">Production Analysis</span>
+          <span class="tag">Root Cause Analysis</span>
+          <span class="tag">Process Optimization</span>
+          <span class="tag">Cross-functional Collaboration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-heading">
+      <span>How I can contribute</span>
+      <h2>Professional Expertise</h2>
+      <p>Areas where I can contribute to business performance and operational efficiency.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-calculator"></i></div>
+        <h3>Financial Controlling</h3>
+        <p>Financial reporting, cost analysis, forecasting support and variance analysis.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-chart-column"></i></div>
+        <h3>Power BI & Reporting</h3>
+        <p>Business dashboards, KPI tracking and interactive data visualization.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>KPI Performance Analysis</h3>
+        <p>Monitoring business and operational metrics to support decisions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-coins"></i></div>
+        <h3>Cost Controlling</h3>
+        <p>Project cost analysis, cost monitoring and optimization support.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>Reporting Automation</h3>
+        <p>Streamlining recurring reporting with Power Query and Power Automate.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+        <h3>Operational Excellence</h3>
+        <p>Process analysis, root-cause analysis and continuous improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--light);">
+  <div class="container">
+    <div class="section-heading">
+      <span>Selected professional work</span>
+      <h2>Featured Projects & Work Highlights</h2>
+      <p>Examples of analytical and reporting solutions developed through my professional experience.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="project-number">PROJECT 01</span>
+        <h3>Financial & Operational KPI Dashboards</h3>
+        <p>Power BI dashboard development for revenue, inventory, profitability, production and operational performance monitoring.</p>
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPI Reporting</span></div>
+      </div>
+      <div class="project-card">
+        <span class="project-number">PROJECT 02</span>
+        <h3>Automated Reporting Solutions</h3>
+        <p>Automation of recurring reporting processes, data validation and reporting workflows.</p>
+        <div class="tags"><span class="tag">Power Query</span><span class="tag">Power Automate</span><span class="tag">Excel</span></div>
+      </div>
+      <div class="project-card">
+        <span class="project-number">PROJECT 03</span>
+        <h3>SAP & SQL Data Integration</h3>
+        <p>Integration of SAP, SQL, Excel and SharePoint data into centralized reporting solutions.</p>
+        <div class="tags"><span class="tag">SAP</span><span class="tag">SQL</span><span class="tag">SharePoint</span></div>
+      </div>
+      <div class="project-card">
+        <span class="project-number">PROJECT 04</span>
+        <h3>Project Cost & Performance Analysis</h3>
+        <p>Analysis of project costs, prototype costs, engineering efficiency and operational performance indicators.</p>
+        <div class="tags"><span class="tag">Cost Analysis</span><span class="tag">Controlling</span><span class="tag">KPIs</span></div>
+      </div>
+      <div class="project-card">
+        <span class="project-number">PROJECT 05</span>
+        <h3>ESG & Sustainability Reporting</h3>
+        <p>Support for ESG analysis and reporting of electricity, fuel consumption and CO₂ metrics.</p>
+        <div class="tags"><span class="tag">ESG</span><span class="tag">CO₂ Metrics</span><span class="tag">Reporting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section id="languages">
+  <div class="container">
+    <div class="section-heading">
+      <span>Communication</span>
+      <h2>Languages</h2>
+    </div>
+    <div class="languages">
+      <div class="language-card">
+        <h3>English</h3>
+        <p>Proficiency: C1</p>
+      </div>
+      <div class="language-card">
+        <h3>German</h3>
+        <p>Proficiency: B1</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL INTERESTS -->
+<section class="interests">
+  <div class="container">
+    <h2>Beyond Work</h2>
+    <p>I believe discipline, consistency and continuous learning are essential for personal and professional growth.</p>
+    <div class="interest-tags">
+      <span><i class="fa-solid fa-mountain-sun"></i> Trekking</span>
+      <span><i class="fa-solid fa-dumbbell"></i> Exercise & Fitness</span>
+      <span><i class="fa-solid fa-book-open"></i> Continuous Learning</span>
+    </div>
+    <p style="margin-top:30px;font-weight:700;color:var(--gold);font-size:20px;">
+      "Discipline is the key to success."
     </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <span>Let's connect</span>
+      <h2>Contact Me</h2>
+      <p>Open to full-time opportunities in Controlling, Finance and Business Intelligence.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p style="color:#c2cedc;">Feel free to contact me for professional opportunities and collaboration.</p>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div><small>Email</small><a href="mailto:Shreemaral35@gmail.com">Shreemaral35@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <div><small>Phone</small><a href="tel:015510460680">015510460680</a></div>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div><small>Location</small>Nürnberg, Germany</div>
+        </div>
+        <div class="contact-item">
+          <i class="fa-brands fa-linkedin"></i>
+          <div>
+            <small>LinkedIn</small>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Find me on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send Me a Message</h3>
+        <form action="mailto:Shreemaral35@gmail.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div>
+              <label for="name">Your Name</label>
+              <input id="name" name="Name" type="text" placeholder="Enter your name" required>
+            </div>
+            <div>
+              <label for="email">Your Email</label>
+              <input id="email" name="Email" type="email" placeholder="Enter your email" required>
+            </div>
+          </div>
+          <label for="subject">Subject</label>
+          <input id="subject" name="Subject" type="text" placeholder="Enter subject" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" placeholder="Write your message..." required></textarea>
+          <button class="btn btn-gold" type="submit">
+            <i class="fa-regular fa-paper-plane"></i> Send Message
+          </button>
+          <p class="hint">This form opens your default email application. It does not send messages directly from the website.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="logo" style="color:white;">SM<span>.</span></div>
+    <div class="socials">
+      <a href="mailto:Shreemaral35@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/Shreedas07" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <p>© <span id="year"></span> <strong>Shreedas Maral</strong>. All rights reserved.</p>
+    <p>Designed with professionalism, discipline and purpose.</p>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  menuBtn.innerHTML = isOpen
+    ? '<i class="fa-solid fa-xmark"></i>'
+    : '<i class="fa-solid fa-bars"></i>';
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
