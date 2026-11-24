@@ -5,7 +5,7 @@
 
 📍 Nürnberg, Germany
 
-I am an analytical Business and Operations professional with experience in Financial Controlling, KPI Reporting, Power BI dashboards, cost analysis and process optimization.
+I am a Business analytical and Controller professional with experience in Financial Controlling, KPI Reporting, Power BI dashboards, cost analysis and process optimization.
 
 ### 💼 Core Skills
 - Financial Controlling
